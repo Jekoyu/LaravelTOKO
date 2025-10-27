@@ -9,15 +9,25 @@ use Illuminate\Http\Request;
 // use App\Models\Produk;
 
 class ProdukController extends Controller
-{ 
-    
+{
+
     public function index()
     {
-        $inidata = Produk::all();
-        return view('produk', compact('inidata'));
+        //return "Ini Controller Produk";
+        // return view('data');
+
+        // return view('data',compact('nama'));
+        $nama = "Bambang";
+        $prodi = "Sistem Informasi";
+        return view('data', [
+            'nama' => $nama,
+            'nama_prodi' => $prodi
+        ]);
+
+        
     }
 
- 
+
     public function create()
     {
         //
