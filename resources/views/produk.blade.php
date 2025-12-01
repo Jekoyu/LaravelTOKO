@@ -7,6 +7,14 @@
 </head>
 <body>
     <h1>Data Produk</h1>
+    
+    @if(session('success'))
+        <p style="color: green;">{{ session('success') }}</p>
+    @endif
+    
+    <a href="/produk/create">Tambah Produk Baru</a>
+    <br><br>
+    
     <table border="1">
         <thead>
             <tr>

@@ -4,6 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 
 Route::get('/produk',[ProdukController::class,'index']);
+Route::get('/produk/create',[ProdukController::class,'create']);
+Route::post('/produk',[ProdukController::class,'store']);
+
+
+
+
+
 Route::delete('/produk',[ProdukController::class,'destroy']);
 Route::get("/home", function () {
     return view("welcome");

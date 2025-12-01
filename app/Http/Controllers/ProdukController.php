@@ -34,15 +34,33 @@ class ProdukController extends Controller
 
     public function create()
     {
-        //
+        return view('produk_create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
-        //
+      
+        $request->validate([
+            'nama_produk' => 'required|string|
+            max:100|unique:produk,nama_produk',
+            'kategori' => 'required|string|max:50',
+            'harga_satuan' => 'required|numeric|min:0',
+            'stok' => 'required|integer|min:0',
+            'satuan' => 'required|string|max:20'
+        ]);
+
+       
+        Produk::create([
+            'nama_produk' => $request->nama_produk,
+            'kategori' => $request->kategori,
+            'harga_satuan' => $request->harga_satuan,
+            'stok' => $request->stok,
+            'satuan' => $request->satuan
+        ]);
+
+        return redirect('/produk')->with('success',
+         'Produk berhasil ditambahkan!');
     }
 
     /**
