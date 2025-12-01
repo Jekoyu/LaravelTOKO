@@ -15,16 +15,20 @@ class ProdukController extends Controller
     {
         //return "Ini Controller Produk";
         // return view('data');
-
         // return view('data',compact('nama'));
-        $nama = "Bambang";
-        $prodi = "Sistem Informasi";
-        return view('data', [
-            'nama' => $nama,
-            'nama_prodi' => $prodi
-        ]);
+        // $nama = "Bambang";
+        // $prodi = "Sistem Informasi";
+        // return view('data', [
+        //     'nama' => $nama,
+        //     'nama_prodi' => $prodi
+        // ]);
 
         
+
+        $data = Produk::all();
+        return view('produk', 
+        compact('data'));
+
     }
 
 

@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($inidata as $produk)
+            @foreach($data as $produk)
             <tr>
                 <td>{{ $produk->id_produk }}</td>
                 <td>{{ $produk->nama_produk }}</td>
